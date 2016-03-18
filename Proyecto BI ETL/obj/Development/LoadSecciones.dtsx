@@ -1,0 +1,987 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/17/2016 8:35:42 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WIN-BKF0K0VF0U2"
+  DTS:CreatorName="WIN-BKF0K0VF0U2\Administrador"
+  DTS:DTSID="{D4E82620-4591-4D65-836B-3C2BA8D934AE}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.1000.281"
+  DTS:LocaleID="9226"
+  DTS:ObjectName="LoadSecciones"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{A3B6621B-54CE-46EB-B3A9-6D6628307422}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DataFlow"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{68714D65-37A9-47DF-83A4-C4AE60B84C87}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DataFlow"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DataFlow\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DataFlow\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DataFlow\Data Conversion.Inputs[Data Conversion Input].Columns[CRN  ]"
+                      cachedDataType="r8"
+                      cachedName="CRN  "
+                      lineageId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].Columns[CRN  ]" />
+                    <inputColumn
+                      refId="Package\DataFlow\Data Conversion.Inputs[Data Conversion Input].Columns[SECC]"
+                      cachedDataType="r8"
+                      cachedName="SECC"
+                      lineageId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].Columns[SECC]" />
+                    <inputColumn
+                      refId="Package\DataFlow\Data Conversion.Inputs[Data Conversion Input].Columns[CUPO ]"
+                      cachedDataType="r8"
+                      cachedName="CUPO "
+                      lineageId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].Columns[CUPO ]" />
+                    <inputColumn
+                      refId="Package\DataFlow\Data Conversion.Inputs[Data Conversion Input].Columns[INSC]"
+                      cachedDataType="r8"
+                      cachedName="INSC"
+                      lineageId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].Columns[INSC]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DataFlow\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DataFlow\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CRN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CRN]"
+                      name="Copy of CRN"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DataFlow\Excel Source.Outputs[Excel Source Output].Columns[CRN  ]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SECC]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SECC]"
+                      name="Copy of SECC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DataFlow\Excel Source.Outputs[Excel Source Output].Columns[SECC]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CUPO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CUPO]"
+                      name="Copy of CUPO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DataFlow\Excel Source.Outputs[Excel Source Output].Columns[CUPO ]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of INSC]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of INSC]"
+                      name="Copy of INSC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DataFlow\Excel Source.Outputs[Excel Source Output].Columns[INSC]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DataFlow\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DataFlow\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DataFlow\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DataFlow\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DataFlow\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DataFlow\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DataFlow\Eliminar duplicados"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Eliminar duplicados"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DataFlow\Eliminar duplicados.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DataFlow\Eliminar duplicados.Inputs[Sort Input].Columns[Copy of CRN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Copy of CRN"
+                      lineageId="Package\DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CRN]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DataFlow\Eliminar duplicados.Inputs[Sort Input].Columns[Copy of SECC]"
+                      cachedDataType="i4"
+                      cachedName="Copy of SECC"
+                      lineageId="Package\DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SECC]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DataFlow\Eliminar duplicados.Inputs[Sort Input].Columns[Copy of CUPO]"
+                      cachedDataType="i4"
+                      cachedName="Copy of CUPO"
+                      lineageId="Package\DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CUPO]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DataFlow\Eliminar duplicados.Inputs[Sort Input].Columns[Copy of INSC]"
+                      cachedDataType="i4"
+                      cachedName="Copy of INSC"
+                      lineageId="Package\DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of INSC]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DataFlow\Eliminar duplicados.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DataFlow\Eliminar duplicados.Outputs[Sort Output].Columns[Copy of CRN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DataFlow\Eliminar duplicados.Outputs[Sort Output].Columns[Copy of CRN]"
+                      name="Copy of CRN"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CRN]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DataFlow\Eliminar duplicados.Outputs[Sort Output].Columns[Copy of SECC]"
+                      dataType="i4"
+                      lineageId="Package\DataFlow\Eliminar duplicados.Outputs[Sort Output].Columns[Copy of SECC]"
+                      name="Copy of SECC">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SECC]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DataFlow\Eliminar duplicados.Outputs[Sort Output].Columns[Copy of CUPO]"
+                      dataType="i4"
+                      lineageId="Package\DataFlow\Eliminar duplicados.Outputs[Sort Output].Columns[Copy of CUPO]"
+                      name="Copy of CUPO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CUPO]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DataFlow\Eliminar duplicados.Outputs[Sort Output].Columns[Copy of INSC]"
+                      dataType="i4"
+                      lineageId="Package\DataFlow\Eliminar duplicados.Outputs[Sort Output].Columns[Copy of INSC]"
+                      name="Copy of INSC">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DataFlow\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of INSC]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DataFlow\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Hoja1$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DataFlow\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="{A0EDB7A4-C713-470F-94C7-8B24E16DA020}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CarteleraAcumulada]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].Columns[CRN  ]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[CRN  ]"
+                      lineageId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].Columns[CRN  ]"
+                      name="CRN  "
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].Columns[SECC]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[SECC]"
+                      lineageId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].Columns[SECC]"
+                      name="SECC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].Columns[CUPO ]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[CUPO ]"
+                      lineageId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].Columns[CUPO ]"
+                      name="CUPO "
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].Columns[INSC]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[INSC]"
+                      lineageId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].Columns[INSC]"
+                      name="INSC"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[SEMESTRE]"
+                      dataType="r8"
+                      name="SEMESTRE" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[CRN  ]"
+                      dataType="r8"
+                      name="CRN  " />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[ MATERIA    ]"
+                      dataType="wstr"
+                      length="255"
+                      name=" MATERIA    " />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[SECC]"
+                      dataType="r8"
+                      name="SECC" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[CRED      ]"
+                      dataType="r8"
+                      name="CRED      " />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[NOMBRE_CURSO        ]"
+                      dataType="wstr"
+                      length="255"
+                      name="NOMBRE_CURSO        " />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[CUPO ]"
+                      dataType="r8"
+                      name="CUPO " />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[INSC]"
+                      dataType="r8"
+                      name="INSC" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[DISP ]"
+                      dataType="r8"
+                      name="DISP " />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[HINI ]"
+                      dataType="r8"
+                      name="HINI " />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[HFIN ]"
+                      dataType="r8"
+                      name="HFIN " />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[SALON  ]"
+                      dataType="wstr"
+                      length="255"
+                      name="SALON  " />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[CAP_S]"
+                      dataType="r8"
+                      name="CAP_S" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[L ]"
+                      dataType="wstr"
+                      length="255"
+                      name="L " />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[M ]"
+                      dataType="wstr"
+                      length="255"
+                      name="M " />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[I ]"
+                      dataType="wstr"
+                      length="255"
+                      name="I " />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[J ]"
+                      dataType="wstr"
+                      length="255"
+                      name="J " />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[V ]"
+                      dataType="wstr"
+                      length="255"
+                      name="V " />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[S ]"
+                      dataType="wstr"
+                      length="255"
+                      name="S " />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[HINI2]"
+                      dataType="r8"
+                      name="HINI2" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[HFIN2]"
+                      dataType="r8"
+                      name="HFIN2" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[SALON2 ]"
+                      dataType="wstr"
+                      length="255"
+                      name="SALON2 " />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[CAP_S1]"
+                      dataType="r8"
+                      name="CAP_S1" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[L 1]"
+                      dataType="wstr"
+                      length="255"
+                      name="L 1" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[M 1]"
+                      dataType="wstr"
+                      length="255"
+                      name="M 1" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[I 1]"
+                      dataType="wstr"
+                      length="255"
+                      name="I 1" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[J 1]"
+                      dataType="wstr"
+                      length="255"
+                      name="J 1" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[V 1]"
+                      dataType="wstr"
+                      length="255"
+                      name="V 1" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[S 1]"
+                      dataType="wstr"
+                      length="255"
+                      name="S 1" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[HINI3]"
+                      dataType="wstr"
+                      length="255"
+                      name="HINI3" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[HFIN3]"
+                      dataType="wstr"
+                      length="255"
+                      name="HFIN3" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[SALON3 ]"
+                      dataType="wstr"
+                      length="255"
+                      name="SALON3 " />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[CAP_S2]"
+                      dataType="r8"
+                      name="CAP_S2" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[L 2]"
+                      dataType="wstr"
+                      length="255"
+                      name="L 2" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[M 2]"
+                      dataType="wstr"
+                      length="255"
+                      name="M 2" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[I 2]"
+                      dataType="wstr"
+                      length="255"
+                      name="I 2" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[J 2]"
+                      dataType="wstr"
+                      length="255"
+                      name="J 2" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[V 2]"
+                      dataType="wstr"
+                      length="255"
+                      name="V 2" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[S 2]"
+                      dataType="wstr"
+                      length="255"
+                      name="S 2" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[PROFESOR1                     ]"
+                      dataType="wstr"
+                      length="255"
+                      name="PROFESOR1                     " />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[PROFESOR2                     ]"
+                      dataType="wstr"
+                      length="255"
+                      name="PROFESOR2                     " />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Output].ExternalColumns[PROFESOR3                     ]"
+                      dataType="wstr"
+                      length="255"
+                      name="PROFESOR3                     " />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DataFlow\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DataFlow\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DataFlow\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Error Output].Columns[CRN  ]"
+                      dataType="r8"
+                      lineageId="Package\DataFlow\Excel Source.Outputs[Excel Source Error Output].Columns[CRN  ]"
+                      name="CRN  " />
+                    <outputColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Error Output].Columns[SECC]"
+                      dataType="r8"
+                      lineageId="Package\DataFlow\Excel Source.Outputs[Excel Source Error Output].Columns[SECC]"
+                      name="SECC" />
+                    <outputColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Error Output].Columns[CUPO ]"
+                      dataType="r8"
+                      lineageId="Package\DataFlow\Excel Source.Outputs[Excel Source Error Output].Columns[CUPO ]"
+                      name="CUPO " />
+                    <outputColumn
+                      refId="Package\DataFlow\Excel Source.Outputs[Excel Source Error Output].Columns[INSC]"
+                      dataType="r8"
+                      lineageId="Package\DataFlow\Excel Source.Outputs[Excel Source Error Output].Columns[INSC]"
+                      name="INSC" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DataFlow\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SECCION]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DataFlow\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{9D09805F-0502-4146-9FFC-35B364CF369F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.ProjectBI.DataMart]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DataFlow\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DataFlow\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of CRN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Copy of CRN"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\DataFlow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[crn]"
+                      lineageId="Package\DataFlow\Eliminar duplicados.Outputs[Sort Output].Columns[Copy of CRN]" />
+                    <inputColumn
+                      refId="Package\DataFlow\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of SECC]"
+                      cachedDataType="i4"
+                      cachedName="Copy of SECC"
+                      externalMetadataColumnId="Package\DataFlow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[numero]"
+                      lineageId="Package\DataFlow\Eliminar duplicados.Outputs[Sort Output].Columns[Copy of SECC]" />
+                    <inputColumn
+                      refId="Package\DataFlow\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of CUPO]"
+                      cachedDataType="i4"
+                      cachedName="Copy of CUPO"
+                      externalMetadataColumnId="Package\DataFlow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cupo]"
+                      lineageId="Package\DataFlow\Eliminar duplicados.Outputs[Sort Output].Columns[Copy of CUPO]" />
+                    <inputColumn
+                      refId="Package\DataFlow\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of INSC]"
+                      cachedDataType="i4"
+                      cachedName="Copy of INSC"
+                      externalMetadataColumnId="Package\DataFlow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[inscritos]"
+                      lineageId="Package\DataFlow\Eliminar duplicados.Outputs[Sort Output].Columns[Copy of INSC]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      dataType="i8"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[crn]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="crn" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[numero]"
+                      dataType="i4"
+                      name="numero" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[cupo]"
+                      dataType="i4"
+                      name="cupo" />
+                    <externalMetadataColumn
+                      refId="Package\DataFlow\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[inscritos]"
+                      dataType="i4"
+                      name="inscritos" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DataFlow\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DataFlow\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DataFlow\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DataFlow\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DataFlow\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DataFlow\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DataFlow.Paths[Data Conversion Output]"
+              endId="Package\DataFlow\Eliminar duplicados.Inputs[Sort Input]"
+              name="Data Conversion Output"
+              startId="Package\DataFlow\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DataFlow.Paths[Excel Source Output]"
+              endId="Package\DataFlow\Data Conversion.Inputs[Data Conversion Input]"
+              name="Excel Source Output"
+              startId="Package\DataFlow\Excel Source.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\DataFlow.Paths[Sort Output]"
+              endId="Package\DataFlow\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\DataFlow\Eliminar duplicados.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="125,42"
+          Id="Package\DataFlow"
+          TopLeft="318,220" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DataFlow">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="141,42"
+          Id="Package\DataFlow\Excel Source"
+          TopLeft="70,204" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\DataFlow\Data Conversion"
+          TopLeft="315,206" />
+        <EdgeLayout
+          Id="Package\DataFlow.Paths[Excel Source Output]"
+          TopLeft="211,226">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="104,0"
+              Start="0,0"
+              End="96.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="96.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="172,42"
+          Id="Package\DataFlow\Eliminar duplicados"
+          TopLeft="589,209" />
+        <EdgeLayout
+          Id="Package\DataFlow.Paths[Data Conversion Output]"
+          TopLeft="473,228.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="116,0"
+              Start="0,0"
+              End="108.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="108.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="173,42"
+          Id="Package\DataFlow\OLE DB Destination"
+          TopLeft="925,210" />
+        <EdgeLayout
+          Id="Package\DataFlow.Paths[Sort Output]"
+          TopLeft="761,230.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="164,0"
+              Start="0,0"
+              End="156.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="156.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DataFlow\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DataFlow\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

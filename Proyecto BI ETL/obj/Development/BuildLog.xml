@@ -2,15 +2,10 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Proyecto BI ETL</Name>
-    <LastWriteTime>2016-03-17T04:46:00.8763146Z</LastWriteTime>
+    <LastWriteTime>2016-03-17T22:21:15.866026Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
-    <ProjectBuildItemInfo>
-      <Name>Package.dtsx</Name>
-      <LastWriteTime>2016-03-17T03:04:30.1839469Z</LastWriteTime>
-      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
-    </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadProfesores.dtsx</Name>
       <LastWriteTime>2016-03-17T04:24:37.4789084Z</LastWriteTime>
@@ -19,6 +14,41 @@
     <ProjectBuildItemInfo>
       <Name>LoadHora.dtsx</Name>
       <LastWriteTime>2016-03-17T05:09:01.5082822Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>LoadSecciones.dtsx</Name>
+      <LastWriteTime>2016-03-17T13:51:54.3909667Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>LoadSalones.dtsx</Name>
+      <LastWriteTime>2016-03-17T15:58:22.0839579Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>LoadProgramas.dtsx</Name>
+      <LastWriteTime>2016-03-17T16:06:12.3738569Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>LoadCursos.dtsx</Name>
+      <LastWriteTime>2016-03-17T21:07:11.3299146Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>LoadPromedios.dtsx</Name>
+      <LastWriteTime>2016-03-17T17:16:41.2006522Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>LoadEstudiantes.dtsx</Name>
+      <LastWriteTime>2016-03-17T21:07:54.6853944Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>LoadFacts.dtsx</Name>
+      <LastWriteTime>2016-03-17T22:29:31.3403655Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

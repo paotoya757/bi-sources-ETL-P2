@@ -1,0 +1,1304 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/17/2016 2:59:13 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WIN-BKF0K0VF0U2"
+  DTS:CreatorName="WIN-BKF0K0VF0U2\Administrador"
+  DTS:DTSID="{5A2211B4-7C58-49B9-890F-5D58244DE6B0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.1000.281"
+  DTS:LocaleID="9226"
+  DTS:ObjectName="LoadFacts"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{C067E932-2A87-4B7F-B628-CE3164F26BDF}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5746C4BF-84DF-440B-A52E-9C09B2CDC104}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="1033"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\CarteleraForFacts"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="CarteleraForFacts"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Hoja1$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\CarteleraForFacts.Connections[OleDbConnection]"
+                  connectionManagerID="{63CBF02E-D919-4EB5-8868-BB0945135217}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[FACTS_CARTELERA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[SEMESTRE]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[SEMESTRE]"
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[SEMESTRE]"
+                      name="SEMESTRE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[CRN  ]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[CRN  ]"
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[CRN  ]"
+                      name="CRN  "
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[Programa_Curso ]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[Programa_Curso ]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[Programa_Curso ]"
+                      name="Programa_Curso "
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[Codigo_Curso]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[Codigo_Curso]"
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[Codigo_Curso]"
+                      name="Codigo_Curso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[HINI ]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[HINI ]"
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[HINI ]"
+                      name="HINI "
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[BLOQUE_SALON]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[BLOQUE_SALON]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[BLOQUE_SALON]"
+                      name="BLOQUE_SALON"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[NUMERO_SALON]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[NUMERO_SALON]"
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[NUMERO_SALON]"
+                      name="NUMERO_SALON"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[PROFESOR1                     ]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[PROFESOR1                     ]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[PROFESOR1                     ]"
+                      name="PROFESOR1                     "
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[SEMESTRE]"
+                      dataType="r8"
+                      name="SEMESTRE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[CRN  ]"
+                      dataType="r8"
+                      name="CRN  " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[Programa_Curso ]"
+                      dataType="wstr"
+                      length="255"
+                      name="Programa_Curso " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[Codigo_Curso]"
+                      dataType="r8"
+                      name="Codigo_Curso" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[SECC]"
+                      dataType="r8"
+                      name="SECC" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[CRED      ]"
+                      dataType="r8"
+                      name="CRED      " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[NOMBRE_CURSO        ]"
+                      dataType="wstr"
+                      length="255"
+                      name="NOMBRE_CURSO        " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[CUPO ]"
+                      dataType="r8"
+                      name="CUPO " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[INSC]"
+                      dataType="r8"
+                      name="INSC" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[DISP ]"
+                      dataType="r8"
+                      name="DISP " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[HINI ]"
+                      dataType="r8"
+                      name="HINI " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[HFIN ]"
+                      dataType="r8"
+                      name="HFIN " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[BLOQUE_SALON]"
+                      dataType="wstr"
+                      length="255"
+                      name="BLOQUE_SALON" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[NUMERO_SALON]"
+                      dataType="r8"
+                      name="NUMERO_SALON" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[CAP_S]"
+                      dataType="r8"
+                      name="CAP_S" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[L ]"
+                      dataType="wstr"
+                      length="255"
+                      name="L " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[M ]"
+                      dataType="wstr"
+                      length="255"
+                      name="M " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[I ]"
+                      dataType="wstr"
+                      length="255"
+                      name="I " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[J ]"
+                      dataType="wstr"
+                      length="255"
+                      name="J " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[V ]"
+                      dataType="wstr"
+                      length="255"
+                      name="V " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[S ]"
+                      dataType="wstr"
+                      length="255"
+                      name="S " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[HINI2]"
+                      dataType="r8"
+                      name="HINI2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[HFIN2]"
+                      dataType="r8"
+                      name="HFIN2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[SALON2 ]"
+                      dataType="wstr"
+                      length="255"
+                      name="SALON2 " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[CAP_S1]"
+                      dataType="r8"
+                      name="CAP_S1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[L 1]"
+                      dataType="wstr"
+                      length="255"
+                      name="L 1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[M 1]"
+                      dataType="wstr"
+                      length="255"
+                      name="M 1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[I 1]"
+                      dataType="wstr"
+                      length="255"
+                      name="I 1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[J 1]"
+                      dataType="wstr"
+                      length="255"
+                      name="J 1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[V 1]"
+                      dataType="wstr"
+                      length="255"
+                      name="V 1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[S 1]"
+                      dataType="wstr"
+                      length="255"
+                      name="S 1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[HINI3]"
+                      dataType="wstr"
+                      length="255"
+                      name="HINI3" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[HFIN3]"
+                      dataType="wstr"
+                      length="255"
+                      name="HFIN3" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[SALON3 ]"
+                      dataType="wstr"
+                      length="255"
+                      name="SALON3 " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[CAP_S2]"
+                      dataType="r8"
+                      name="CAP_S2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[L 2]"
+                      dataType="wstr"
+                      length="255"
+                      name="L 2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[M 2]"
+                      dataType="wstr"
+                      length="255"
+                      name="M 2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[I 2]"
+                      dataType="wstr"
+                      length="255"
+                      name="I 2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[J 2]"
+                      dataType="wstr"
+                      length="255"
+                      name="J 2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[V 2]"
+                      dataType="wstr"
+                      length="255"
+                      name="V 2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[S 2]"
+                      dataType="wstr"
+                      length="255"
+                      name="S 2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[PROFESOR1                     ]"
+                      dataType="wstr"
+                      length="255"
+                      name="PROFESOR1                     " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[PROFESOR2                     ]"
+                      dataType="wstr"
+                      length="255"
+                      name="PROFESOR2                     " />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].ExternalColumns[PROFESOR3                     ]"
+                      dataType="wstr"
+                      length="255"
+                      name="PROFESOR3                     " />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Error Output].Columns[SEMESTRE]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Error Output].Columns[SEMESTRE]"
+                      name="SEMESTRE" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Error Output].Columns[CRN  ]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Error Output].Columns[CRN  ]"
+                      name="CRN  " />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Error Output].Columns[Programa_Curso ]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Error Output].Columns[Programa_Curso ]"
+                      name="Programa_Curso " />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Error Output].Columns[Codigo_Curso]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Error Output].Columns[Codigo_Curso]"
+                      name="Codigo_Curso" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Error Output].Columns[HINI ]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Error Output].Columns[HINI ]"
+                      name="HINI " />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Error Output].Columns[BLOQUE_SALON]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Error Output].Columns[BLOQUE_SALON]"
+                      name="BLOQUE_SALON" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Error Output].Columns[NUMERO_SALON]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Error Output].Columns[NUMERO_SALON]"
+                      name="NUMERO_SALON" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Error Output].Columns[PROFESOR1                     ]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Error Output].Columns[PROFESOR1                     ]"
+                      name="PROFESOR1                     " />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[SEMESTRE]"
+                      cachedDataType="r8"
+                      cachedName="SEMESTRE"
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[SEMESTRE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[CRN  ]"
+                      cachedDataType="r8"
+                      cachedName="CRN  "
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[CRN  ]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Programa_Curso ]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Programa_Curso "
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[Programa_Curso ]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Codigo_Curso]"
+                      cachedDataType="r8"
+                      cachedName="Codigo_Curso"
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[Codigo_Curso]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[HINI ]"
+                      cachedDataType="r8"
+                      cachedName="HINI "
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[HINI ]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[BLOQUE_SALON]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="BLOQUE_SALON"
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[BLOQUE_SALON]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[NUMERO_SALON]"
+                      cachedDataType="r8"
+                      cachedName="NUMERO_SALON"
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[NUMERO_SALON]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[PROFESOR1                     ]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PROFESOR1                     "
+                      lineageId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[PROFESOR1                     ]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[c_SEMESTRE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[c_SEMESTRE]"
+                      name="c_SEMESTRE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[SEMESTRE]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[c_CRN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[c_CRN]"
+                      name="c_CRN"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[CRN  ]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[c_nombre_Curso]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[c_nombre_Curso]"
+                      name="c_nombre_Curso"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[Programa_Curso ]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[c_Codigo_Curso]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[c_Codigo_Curso]"
+                      name="c_Codigo_Curso"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[Codigo_Curso]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[c_HINI]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[c_HINI]"
+                      name="c_HINI"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[HINI ]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[c_BLOQUE_SALON]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[c_BLOQUE_SALON]"
+                      name="c_BLOQUE_SALON"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[BLOQUE_SALON]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[c_NUMERO_SALON]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[c_NUMERO_SALON]"
+                      name="c_NUMERO_SALON"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[NUMERO_SALON]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[c_PROFESOR1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[c_PROFESOR1]"
+                      name="c_PROFESOR1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output].Columns[PROFESOR1                     ]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Lookup id seccion"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup id seccion"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[SECCION]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[SECCION]) [refTable]
+where [refTable].[crn] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="crn" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="numero" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="cupo" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="inscritos" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[c_CRN]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Lookup id seccion.Connections[OleDbConnection]"
+                  connectionManagerID="{9D09805F-0502-4146-9FFC-35B364CF369F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.ProjectBI.DataMart]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Lookup id seccion.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Lookup id seccion.Inputs[Lookup Input].Columns[c_CRN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="c_CRN"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[c_CRN]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">crn</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Lookup id seccion.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup id seccion.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup id seccion.Outputs[Lookup Match Output].Columns[id_seccion]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow Task\Lookup id seccion.Outputs[Lookup Match Output].Columns[id_seccion]"
+                      name="id_seccion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup id seccion.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup id seccion.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Lookup id seccion.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\Lookup id seccion.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup id seccion.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup id seccion.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Lookup id seccion.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Lookup id seccion.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\lookup id semestre"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              localeId="1033"
+              name="lookup id semestre"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[SEMESTRE]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[SEMESTRE]) [refTable]
+where [refTable].[periodo] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="periodo" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[c_SEMESTRE]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\lookup id semestre.Connections[OleDbConnection]"
+                  connectionManagerID="{9D09805F-0502-4146-9FFC-35B364CF369F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.ProjectBI.DataMart]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\lookup id semestre.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\lookup id semestre.Inputs[Lookup Input].Columns[c_SEMESTRE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="c_SEMESTRE"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[c_SEMESTRE]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">periodo</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\lookup id semestre.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\lookup id semestre.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\lookup id semestre.Outputs[Lookup Match Output].Columns[id_semestre]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow Task\lookup id semestre.Outputs[Lookup Match Output].Columns[id_semestre]"
+                      name="id_semestre"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\lookup id semestre.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\lookup id semestre.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\lookup id semestre.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\lookup id semestre.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\lookup id semestre.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\lookup id semestre.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\lookup id semestre.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\lookup id semestre.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Task\lookup id semestre.Inputs[Lookup Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Excel Source Output]"
+              endId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
+              name="Excel Source Output"
+              startId="Package\Data Flow Task\CarteleraForFacts.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Lookup Match Output]"
+              endId="Package\Data Flow Task\Lookup id seccion.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow Task\lookup id semestre.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Lookup Match Output1]"
+              endId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow Task\Lookup id seccion.Outputs[Lookup Match Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Data Flow Task"
+          TopLeft="349,179" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Data Flow Task\CarteleraForFacts"
+          TopLeft="293,66" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Data Flow Task\Data Conversion"
+          TopLeft="290,181" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Excel Source Output]"
+          TopLeft="371.75,108">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73"
+              Start="0,0"
+              End="0,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Data Flow Task\lookup id semestre"
+          TopLeft="278,296" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
+          TopLeft="366,223">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73"
+              Start="0,0"
+              End="0,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Data Flow Task\Lookup id seccion"
+          TopLeft="281,400" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output]"
+          TopLeft="363,338">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62"
+              Start="0,0"
+              End="0,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,21.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Data Flow Task\Derived Column"
+          TopLeft="322,506" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output1]"
+          TopLeft="363,442">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="37,64"
+              Start="0,0"
+              End="37,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28"
+                    Point2="0,32"
+                    Point3="4,32" />
+                  <mssgle:LineSegment
+                    End="33,32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="33,32"
+                    Point2="37,32"
+                    Point3="37,36" />
+                  <mssgle:LineSegment
+                    End="37,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-38.5600390625,37,114.120078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\CarteleraForFacts">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\lookup id semestre">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[SEMESTRE]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Lookup id seccion">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[SECCION]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
